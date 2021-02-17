@@ -1,0 +1,57 @@
+{
+  "name": "try36-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env DOTENV_CONFIG_PATH='./.env.dev' nodemon",
+    "start": "cross-env DOTENV_CONFIG_PATH='./.env.prod' && npm run build && node dist/app.js | npm run pino-pretty",
+    "build": "rimraf ./dist && tsc",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "pino-pretty": "npx pino-pretty",
+    "format": "prettier --write 'src/**/*ts'",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/try36/try36-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/try36/try36-api/issues"
+  },
+  "homepage": "https://github.com/try36/try36-api#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/express-pino-logger": "^4.0.2",
+    "@types/mongodb": "^3.6.7",
+    "@types/mongoose": "^5.10.3",
+    "@types/node": "^14.14.28",
+    "@types/pino": "^6.3.5",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.20.0",
+    "nodemon": "^2.0.7",
+    "pino-pretty": "^4.5.0",
+    "prettier": "2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "celebrate": "^13.0.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-pino-logger": "^6.0.0",
+    "firebase-admin": "^9.5.0",
+    "mongoose": "5.11.15",
+    "pino": "^6.11.1"
+  }
+}
