@@ -1,1 +1,2 @@
-try36-api
+Boilerplate using Node+Express+TypeScript 
+Configured with Firebase+MongoDb
